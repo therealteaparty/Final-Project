@@ -3,10 +3,6 @@
 ## Implementation
 Built with Godot 4.1
 
-Original player sprites...
-
-Music created with...
-
 Additional Features:
 
 	1. Original sprites
