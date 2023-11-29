@@ -17,6 +17,9 @@ Additional Features:
 
 ## References
 
+Godot How to Make a Random Choice Function -- https://www.youtube.com/watch?v=CoEput1d8DE
+
+3 Ways to Create Timers in Godot 4 -- https://www.youtube.com/watch?v=1sYgGvrDYag
 
 ## Future Development
 

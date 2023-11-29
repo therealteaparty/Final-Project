@@ -1,38 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp6f0w6btekma"]
+[gd_scene load_steps=7 format=3 uid="uid://dp6f0w6btekma"]
 
+[ext_resource type="Texture2D" uid="uid://b6jwjg8lh67rf" path="res://Assets/vending 2.png" id="1_82bi0"]
+[ext_resource type="Script" path="res://Levels/level1.gd" id="1_4332q"]
 [ext_resource type="Script" path="res://Player/Player_Container.gd" id="1_q7ijn"]
 [ext_resource type="PackedScene" uid="uid://c3vfis55kri1f" path="res://Player/player.tscn" id="2_ijapu"]
-[ext_resource type="Script" path="res://Player/Camera.gd" id="2_vgq72"]
 [ext_resource type="Script" path="res://UI/Pause.gd" id="3_sdsxq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qy3d8"]
-size = Vector2(3005, 77)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ob0h"]
+size = Vector2(124, 108)
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_4332q")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 3000.0
-offset_bottom = 644.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_82bi0")
 
 [node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource("1_q7ijn")
 
 [node name="Player" parent="Player_Container" instance=ExtResource("2_ijapu")]
-
-[node name="Enemy_Container" type="Node2D" parent="."]
-
-[node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(6, 646)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(1492.5, 28.5)
-shape = SubResource("RectangleShape2D_qy3d8")
-
-[node name="Camera" type="Camera2D" parent="."]
-limit_left = -90
-limit_top = -60
-limit_bottom = 645
-script = ExtResource("2_vgq72")
+position = Vector2(140, 150)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -43,6 +31,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HUD_Countdown" type="Label" parent="UI/HUD"]
+layout_mode = 0
+offset_left = 911.0
+offset_top = 434.0
+offset_right = 1059.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "TIME:"
 
 [node name="Pause" type="Control" parent="UI"]
 visible = false
@@ -101,6 +99,110 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "QUIT"
 
+[node name="A1" type="Area2D" parent="."]
+position = Vector2(140, 150)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A1"]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_3ob0h")
+
+[node name="A2" type="Area2D" parent="."]
+position = Vector2(315, 150)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A2"]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_3ob0h")
+
+[node name="A3" type="Area2D" parent="."]
+position = Vector2(500, 150)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A3"]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_3ob0h")
+
+[node name="A4" type="Area2D" parent="."]
+position = Vector2(685, 150)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A4"]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_3ob0h")
+
+[node name="B1" type="Area2D" parent="."]
+position = Vector2(140, 330)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B1"]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_3ob0h")
+
+[node name="B2" type="Area2D" parent="."]
+position = Vector2(315, 330)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B2"]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_3ob0h")
+
+[node name="B3" type="Area2D" parent="."]
+position = Vector2(500, 330)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B3"]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_3ob0h")
+
+[node name="B4" type="Area2D" parent="."]
+position = Vector2(685, 330)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B4"]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_3ob0h")
+
+[node name="C1" type="Area2D" parent="."]
+position = Vector2(140, 510)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C1"]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_3ob0h")
+
+[node name="C2" type="Area2D" parent="."]
+position = Vector2(315, 510)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C2"]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_3ob0h")
+
+[node name="C3" type="Area2D" parent="."]
+position = Vector2(500, 510)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C3"]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_3ob0h")
+
+[node name="C4" type="Area2D" parent="."]
+position = Vector2(685, 510)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C4"]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_3ob0h")
+
+[node name="Chosen_Space" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Countdown" type="Timer" parent="."]
+wait_time = 60.0
+
 [connection signal="pressed" from="UI/Pause/Restart" to="Player_Container" method="_on_restart_pressed"]
 [connection signal="pressed" from="UI/Pause/Restart" to="UI/Pause" method="_on_restart_pressed"]
 [connection signal="pressed" from="UI/Pause/Quit" to="UI/Pause" method="_on_quit_pressed"]
+[connection signal="body_entered" from="A1" to="." method="_on_a_1_body_entered"]
+[connection signal="body_entered" from="A2" to="." method="_on_a_2_body_entered"]
+[connection signal="body_entered" from="A3" to="." method="_on_a_3_body_entered"]
+[connection signal="body_entered" from="A4" to="." method="_on_a_4_body_entered"]
+[connection signal="body_entered" from="B1" to="." method="_on_b_1_body_entered"]
+[connection signal="body_entered" from="B2" to="." method="_on_b_2_body_entered"]
+[connection signal="body_entered" from="B3" to="." method="_on_b_3_body_entered"]
+[connection signal="body_entered" from="B4" to="." method="_on_b_4_body_entered"]
+[connection signal="body_entered" from="C1" to="." method="_on_c_1_body_entered"]
+[connection signal="body_entered" from="C2" to="." method="_on_c_2_body_entered"]
+[connection signal="body_entered" from="C3" to="." method="_on_c_3_body_entered"]
+[connection signal="body_entered" from="C4" to="." method="_on_c_4_body_entered"]
+[connection signal="timeout" from="Chosen_Space" to="." method="_on_chosen_space_timeout"]
+[connection signal="timeout" from="Countdown" to="." method="_on_countdown_timeout"]
