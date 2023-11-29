@@ -1,13 +1,119 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp6f0w6btekma"]
+[gd_scene load_steps=22 format=3 uid="uid://dp6f0w6btekma"]
 
 [ext_resource type="Texture2D" uid="uid://b6jwjg8lh67rf" path="res://Assets/vending 2.png" id="1_82bi0"]
 [ext_resource type="Script" path="res://Levels/level1.gd" id="1_4332q"]
-[ext_resource type="Script" path="res://Player/Player_Container.gd" id="1_q7ijn"]
 [ext_resource type="PackedScene" uid="uid://c3vfis55kri1f" path="res://Player/player.tscn" id="2_ijapu"]
 [ext_resource type="Script" path="res://UI/Pause.gd" id="3_sdsxq"]
+[ext_resource type="Texture2D" uid="uid://diqxdvb1rwhdh" path="res://Assets/New Piskel (3).png" id="6_8kscx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ob0h"]
 size = Vector2(124, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2gdf"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8brtf"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(160, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jbhg"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(320, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5wnp"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(480, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsqun"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(640, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kv0u"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(0, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m1or"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(160, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_memmm"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(320, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2beo2"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(480, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o88qx"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(640, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q84pj"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(0, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjivi"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(160, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjj34"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(320, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8urj3"]
+atlas = ExtResource("6_8kscx")
+region = Rect2(480, 320, 160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c280j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2gdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8brtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jbhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5wnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsqun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kv0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m1or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_memmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2beo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o88qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q84pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjivi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjj34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8urj3")
+}],
+"loop": false,
+"name": &"flash",
+"speed": 5.0
+}]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_4332q")
@@ -16,10 +122,7 @@ script = ExtResource("1_4332q")
 position = Vector2(576, 324)
 texture = ExtResource("1_82bi0")
 
-[node name="Player_Container" type="Node2D" parent="."]
-script = ExtResource("1_q7ijn")
-
-[node name="Player" parent="Player_Container" instance=ExtResource("2_ijapu")]
+[node name="Player" parent="." instance=ExtResource("2_ijapu")]
 position = Vector2(140, 150)
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -100,6 +203,7 @@ grow_vertical = 2
 text = "QUIT"
 
 [node name="A1" type="Area2D" parent="."]
+visible = false
 position = Vector2(140, 150)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="A1"]
@@ -107,6 +211,7 @@ position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_3ob0h")
 
 [node name="A2" type="Area2D" parent="."]
+visible = false
 position = Vector2(315, 150)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="A2"]
@@ -114,6 +219,7 @@ position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_3ob0h")
 
 [node name="A3" type="Area2D" parent="."]
+visible = false
 position = Vector2(500, 150)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="A3"]
@@ -121,6 +227,7 @@ position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_3ob0h")
 
 [node name="A4" type="Area2D" parent="."]
+visible = false
 position = Vector2(685, 150)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="A4"]
@@ -128,6 +235,7 @@ position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_3ob0h")
 
 [node name="B1" type="Area2D" parent="."]
+visible = false
 position = Vector2(140, 330)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="B1"]
@@ -135,6 +243,7 @@ position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_3ob0h")
 
 [node name="B2" type="Area2D" parent="."]
+visible = false
 position = Vector2(315, 330)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="B2"]
@@ -142,6 +251,7 @@ position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_3ob0h")
 
 [node name="B3" type="Area2D" parent="."]
+visible = false
 position = Vector2(500, 330)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="B3"]
@@ -149,6 +259,7 @@ position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_3ob0h")
 
 [node name="B4" type="Area2D" parent="."]
+visible = false
 position = Vector2(685, 330)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="B4"]
@@ -156,6 +267,7 @@ position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_3ob0h")
 
 [node name="C1" type="Area2D" parent="."]
+visible = false
 position = Vector2(140, 510)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="C1"]
@@ -163,6 +275,7 @@ position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_3ob0h")
 
 [node name="C2" type="Area2D" parent="."]
+visible = false
 position = Vector2(315, 510)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="C2"]
@@ -170,6 +283,7 @@ position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_3ob0h")
 
 [node name="C3" type="Area2D" parent="."]
+visible = false
 position = Vector2(500, 510)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="C3"]
@@ -177,6 +291,7 @@ position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_3ob0h")
 
 [node name="C4" type="Area2D" parent="."]
+visible = false
 position = Vector2(685, 510)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="C4"]
@@ -184,12 +299,166 @@ position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_3ob0h")
 
 [node name="Chosen_Space" type="Timer" parent="."]
-wait_time = 3.0
 
 [node name="Countdown" type="Timer" parent="."]
 wait_time = 60.0
 
-[connection signal="pressed" from="UI/Pause/Restart" to="Player_Container" method="_on_restart_pressed"]
+[node name="KeyA1" type="AnimatedSprite2D" parent="."]
+position = Vector2(913, 187)
+scale = Vector2(0.3125, 0.3125)
+sprite_frames = SubResource("SpriteFrames_c280j")
+animation = &"flash"
+frame = 13
+frame_progress = 1.0
+
+[node name="KeyA2" type="AnimatedSprite2D" parent="."]
+position = Vector2(913, 251)
+scale = Vector2(0.3125, 0.3125)
+sprite_frames = SubResource("SpriteFrames_c280j")
+animation = &"flash"
+frame = 13
+frame_progress = 1.0
+
+[node name="KeyA3" type="AnimatedSprite2D" parent="."]
+position = Vector2(916, 316)
+scale = Vector2(0.3125, 0.3125)
+sprite_frames = SubResource("SpriteFrames_c280j")
+animation = &"flash"
+frame = 13
+frame_progress = 1.0
+
+[node name="KeyA4" type="AnimatedSprite2D" parent="."]
+position = Vector2(915, 377)
+scale = Vector2(0.3125, 0.3125)
+sprite_frames = SubResource("SpriteFrames_c280j")
+animation = &"flash"
+frame = 13
+frame_progress = 1.0
+
+[node name="KeyB1" type="AnimatedSprite2D" parent="."]
+position = Vector2(976, 186)
+scale = Vector2(0.3125, 0.3125)
+sprite_frames = SubResource("SpriteFrames_c280j")
+animation = &"flash"
+frame = 13
+frame_progress = 1.0
+
+[node name="KeyB2" type="AnimatedSprite2D" parent="."]
+position = Vector2(975, 250)
+scale = Vector2(0.3125, 0.3125)
+sprite_frames = SubResource("SpriteFrames_c280j")
+animation = &"flash"
+frame = 13
+frame_progress = 1.0
+
+[node name="KeyB3" type="AnimatedSprite2D" parent="."]
+position = Vector2(975, 316)
+scale = Vector2(0.3125, 0.3125)
+sprite_frames = SubResource("SpriteFrames_c280j")
+animation = &"flash"
+frame = 13
+frame_progress = 1.0
+
+[node name="KeyB4" type="AnimatedSprite2D" parent="."]
+position = Vector2(977, 378)
+scale = Vector2(0.3125, 0.3125)
+sprite_frames = SubResource("SpriteFrames_c280j")
+animation = &"flash"
+frame = 13
+frame_progress = 1.0
+
+[node name="KeyC1" type="AnimatedSprite2D" parent="."]
+position = Vector2(1038, 182)
+scale = Vector2(0.3125, 0.3125)
+sprite_frames = SubResource("SpriteFrames_c280j")
+animation = &"flash"
+frame = 13
+frame_progress = 1.0
+
+[node name="KeyC2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1038, 249)
+scale = Vector2(0.3125, 0.3125)
+sprite_frames = SubResource("SpriteFrames_c280j")
+animation = &"flash"
+frame = 13
+frame_progress = 1.0
+
+[node name="KeyC3" type="AnimatedSprite2D" parent="."]
+position = Vector2(1038, 316)
+scale = Vector2(0.3125, 0.3125)
+sprite_frames = SubResource("SpriteFrames_c280j")
+animation = &"flash"
+frame = 13
+frame_progress = 1.0
+
+[node name="KeyC4" type="AnimatedSprite2D" parent="."]
+position = Vector2(1039, 377)
+scale = Vector2(0.3125, 0.3125)
+sprite_frames = SubResource("SpriteFrames_c280j")
+animation = &"flash"
+frame = 13
+frame_progress = 1.0
+
+[node name="SpaceA1" type="AnimatedSprite2D" parent="."]
+position = Vector2(1204, 246)
+scale = Vector2(0.3125, 0.3125)
+animation = &"vending"
+
+[node name="SpaceA2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1252, 242)
+scale = Vector2(0.3125, 0.3125)
+animation = &""
+
+[node name="SpaceA3" type="AnimatedSprite2D" parent="."]
+position = Vector2(1293, 245)
+scale = Vector2(0.3125, 0.3125)
+animation = &""
+
+[node name="SpaceA4" type="AnimatedSprite2D" parent="."]
+position = Vector2(1327, 242)
+scale = Vector2(0.3125, 0.3125)
+animation = &""
+
+[node name="SpaceB1" type="AnimatedSprite2D" parent="."]
+position = Vector2(1206, 286)
+scale = Vector2(0.3125, 0.3125)
+animation = &""
+
+[node name="SpaceB2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1246, 286)
+scale = Vector2(0.3125, 0.3125)
+animation = &""
+
+[node name="SpaceB3" type="AnimatedSprite2D" parent="."]
+position = Vector2(1287, 278)
+scale = Vector2(0.3125, 0.3125)
+animation = &""
+
+[node name="SpaceB4" type="AnimatedSprite2D" parent="."]
+position = Vector2(1327, 281)
+scale = Vector2(0.3125, 0.3125)
+animation = &""
+
+[node name="SpaceC1" type="AnimatedSprite2D" parent="."]
+position = Vector2(1208, 323)
+scale = Vector2(0.3125, 0.3125)
+animation = &""
+
+[node name="SpaceC2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1241, 322)
+scale = Vector2(0.3125, 0.3125)
+animation = &""
+
+[node name="SpaceC3" type="AnimatedSprite2D" parent="."]
+position = Vector2(1280, 325)
+scale = Vector2(0.3125, 0.3125)
+animation = &""
+
+[node name="SpaceC4" type="AnimatedSprite2D" parent="."]
+position = Vector2(1319, 323)
+scale = Vector2(0.3125, 0.3125)
+animation = &""
+
 [connection signal="pressed" from="UI/Pause/Restart" to="UI/Pause" method="_on_restart_pressed"]
 [connection signal="pressed" from="UI/Pause/Quit" to="UI/Pause" method="_on_quit_pressed"]
 [connection signal="body_entered" from="A1" to="." method="_on_a_1_body_entered"]
@@ -206,3 +475,15 @@ wait_time = 60.0
 [connection signal="body_entered" from="C4" to="." method="_on_c_4_body_entered"]
 [connection signal="timeout" from="Chosen_Space" to="." method="_on_chosen_space_timeout"]
 [connection signal="timeout" from="Countdown" to="." method="_on_countdown_timeout"]
+[connection signal="animation_finished" from="KeyA1" to="." method="_on_key_a_1_animation_finished"]
+[connection signal="animation_finished" from="KeyA2" to="." method="_on_key_a_2_animation_finished"]
+[connection signal="animation_finished" from="KeyA3" to="." method="_on_key_a_3_animation_finished"]
+[connection signal="animation_finished" from="KeyA4" to="." method="_on_key_a_4_animation_finished"]
+[connection signal="animation_finished" from="KeyB1" to="." method="_on_key_b_1_animation_finished"]
+[connection signal="animation_finished" from="KeyB2" to="." method="_on_key_b_2_animation_finished"]
+[connection signal="animation_finished" from="KeyB3" to="." method="_on_key_b_3_animation_finished"]
+[connection signal="animation_finished" from="KeyB4" to="." method="_on_key_b_4_animation_finished"]
+[connection signal="animation_finished" from="KeyC1" to="." method="_on_key_c_1_animation_finished"]
+[connection signal="animation_finished" from="KeyC2" to="." method="_on_key_c_2_animation_finished"]
+[connection signal="animation_finished" from="KeyC3" to="." method="_on_key_c_3_animation_finished"]
+[connection signal="animation_finished" from="KeyC4" to="." method="_on_key_c_4_animation_finished"]
