@@ -5,18 +5,6 @@ extends Node2D
 
 var new_position = Vector2.ZERO
 
-var time_appear = 0.5
-var time_fall = 0.8
-var time_rotate = 1.0
-var time_a = 0.8
-var time_s = 1.2
-var time_v = 1.5
-var tween
-
-var sway_amplitude = 3.0
-var sway_initial_position = Vector2.ZERO
-var sway_randomizer = Vector2.ZERO
-
 var spaces = {
 	"A1":0, "A2":0, "A3":0, "A4":0,
 	"B1":0, "B2":0, "B3":0, "B4":0,
@@ -33,8 +21,8 @@ func _ready():
 	randomize()
 	$Countdown.start()
 	$Chosen_Space.start()
-	tween = create_tween()
-	tween.tween_property(self, "position", new_position, 0.5 + randf()*2).set_trans(Tween.TRANS_BOUNCE)
+	Global.coins = 0
+
 
 #MIGHT NOT NEED THIS/NOT USING IT RN
 func _process(_delta):

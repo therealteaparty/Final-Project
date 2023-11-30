@@ -1,0 +1,168 @@
+[gd_scene load_steps=2 format=3 uid="uid://4mmxo6k1b01r"]
+
+[ext_resource type="Script" path="res://UI/HUD.gd" id="1_am785"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_am785")
+
+[node name="HUD_Countdown" type="Label" parent="."]
+layout_mode = 0
+offset_left = 911.0
+offset_top = 434.0
+offset_right = 1059.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "TIME:"
+
+[node name="Numbers_A" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 126.0
+offset_top = 201.0
+offset_right = -432.0
+offset_bottom = -351.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "A1                  A2                  A3                 A4
+
+"
+
+[node name="Numbers_B" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 127.0
+offset_top = 382.0
+offset_right = -431.0
+offset_bottom = -170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "B1                  B2                  B3                 B4
+
+"
+
+[node name="Numbers_C" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 125.0
+offset_top = 565.0
+offset_right = -433.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "C1                  C2                  C3                 C4
+
+"
+
+[node name="Keypad_Numbers_1" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 893.0
+offset_top = 163.0
+offset_right = -85.0
+offset_bottom = -341.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "A1   B1   C1
+
+
+"
+
+[node name="Keypad_Numbers_2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 894.0
+offset_top = 230.0
+offset_right = -84.0
+offset_bottom = -274.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "A2   B2   C2
+
+
+"
+
+[node name="Keypad_Numbers_3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 893.0
+offset_top = 298.0
+offset_right = -85.0
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "A3   B3   C3
+
+
+"
+
+[node name="Keypad_Numbers_4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 895.0
+offset_top = 357.0
+offset_right = -83.0
+offset_bottom = -147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "A4   B4   C4
+
+
+"
+
+[node name="Coins" type="Label" parent="."]
+layout_mode = 0
+offset_left = 908.0
+offset_top = 501.0
+offset_right = 1063.0
+offset_bottom = 561.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "CANDIES:"
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 0
+offset_left = 983.0
+offset_top = 418.0
+offset_right = 1043.0
+offset_bottom = 487.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time_HUD" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Time_HUD" to="." method="_on_time_hud_timeout"]

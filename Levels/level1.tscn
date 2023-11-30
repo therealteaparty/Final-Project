@@ -1,11 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://dp6f0w6btekma"]
+[gd_scene load_steps=16 format=3 uid="uid://dp6f0w6btekma"]
 
 [ext_resource type="Script" path="res://Levels/level1.gd" id="1_4332q"]
 [ext_resource type="PackedScene" uid="uid://c3vfis55kri1f" path="res://Player/player.tscn" id="2_ijapu"]
 [ext_resource type="Texture2D" uid="uid://b5xjuv61e7mmt" path="res://Assets/background final (2).png" id="2_iwoob"]
 [ext_resource type="Texture2D" uid="uid://x005f4baxuct" path="res://Assets/rings.png" id="3_kmty0"]
+[ext_resource type="PackedScene" uid="uid://4mmxo6k1b01r" path="res://UI/hud.tscn" id="3_p42uc"]
+[ext_resource type="PackedScene" uid="uid://butqwnyr6xplo" path="res://UI/pause_fixed.tscn" id="4_hg5jl"]
 [ext_resource type="Texture2D" uid="uid://bs8xwg3miote6" path="res://Assets/Untitled_Artwork (16).png" id="5_ssol1"]
-[ext_resource type="PackedScene" uid="uid://bnx0getl4e8be" path="res://UI/pause.tscn" id="5_tr6vn"]
 [ext_resource type="SpriteFrames" uid="uid://ryhhj4lnr5gq" path="res://Assets/flashing.tres" id="6_etrxy"]
 [ext_resource type="Texture2D" uid="uid://41g22earp0qu" path="res://Assets/Chipbag1.png" id="6_new71"]
 [ext_resource type="Script" path="res://Player/Candies.gd" id="6_ud00q"]
@@ -36,155 +37,10 @@ texture = ExtResource("2_iwoob")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="HUD" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HUD" parent="UI" instance=ExtResource("3_p42uc")]
 
-[node name="HUD_Countdown" type="Label" parent="UI/HUD"]
-layout_mode = 0
-offset_left = 911.0
-offset_top = 434.0
-offset_right = 1059.0
-offset_bottom = 484.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
-text = "TIME:"
-
-[node name="Numbers_A" type="Label" parent="UI/HUD"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 126.0
-offset_top = 201.0
-offset_right = -432.0
-offset_bottom = -351.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "A1                  A2                  A3                 A4
-
-"
-
-[node name="Numbers_B" type="Label" parent="UI/HUD"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 127.0
-offset_top = 382.0
-offset_right = -431.0
-offset_bottom = -170.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "B1                  B2                  B3                 B4
-
-"
-
-[node name="Numbers_C" type="Label" parent="UI/HUD"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 125.0
-offset_top = 565.0
-offset_right = -433.0
-offset_bottom = 13.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "C1                  C2                  C3                 C4
-
-"
-
-[node name="Keypad_Numbers_1" type="Label" parent="UI/HUD"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 893.0
-offset_top = 163.0
-offset_right = -85.0
-offset_bottom = -341.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "A1   B1   C1
-
-
-"
-
-[node name="Keypad_Numbers_2" type="Label" parent="UI/HUD"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 894.0
-offset_top = 230.0
-offset_right = -84.0
-offset_bottom = -274.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "A2   B2   C2
-
-
-"
-
-[node name="Keypad_Numbers_3" type="Label" parent="UI/HUD"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 893.0
-offset_top = 298.0
-offset_right = -85.0
-offset_bottom = -206.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "A3   B3   C3
-
-
-"
-
-[node name="Keypad_Numbers_4" type="Label" parent="UI/HUD"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 895.0
-offset_top = 357.0
-offset_right = -83.0
-offset_bottom = -147.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "A4   B4   C4
-
-
-"
-
-[node name="Coins" type="Label" parent="UI/HUD"]
-layout_mode = 0
-offset_left = 908.0
-offset_top = 501.0
-offset_right = 1063.0
-offset_bottom = 561.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "CANDIES:"
-vertical_alignment = 1
-
-[node name="Pause" parent="UI" instance=ExtResource("5_tr6vn")]
+[node name="Pause_Fixed" parent="UI" instance=ExtResource("4_hg5jl")]
+process_mode = 3
 visible = false
 
 [node name="Chosen_Space" type="Timer" parent="."]
@@ -289,73 +145,75 @@ frame = 7
 frame_progress = 1.0
 
 [node name="SpaceA1" type="Sprite2D" parent="."]
-modulate = Color(0, 0.368627, 0.890196, 1)
+modulate = Color(0, 0.368627, 0.890196, 0.388235)
 position = Vector2(145, 158)
 scale = Vector2(0.379449, 0.379449)
 texture = ExtResource("6_new71")
 
 [node name="SpaceA2" type="Sprite2D" parent="."]
-modulate = Color(0.72549, 0, 0.729412, 1)
+modulate = Color(0.72549, 0, 0.729412, 0.392157)
 position = Vector2(325, 138)
 scale = Vector2(0.272123, 0.272123)
 texture = ExtResource("7_ktpwi")
 
 [node name="SpaceA3" type="Sprite2D" parent="."]
 modulate = Color(0, 0.956863, 0.298039, 1)
+self_modulate = Color(1, 1, 1, 0.392157)
 position = Vector2(473.1, 163.165)
 scale = Vector2(0.243625, 0.243625)
 texture = ExtResource("7_dnlwq")
 
 [node name="SpaceA4" type="Sprite2D" parent="."]
 modulate = Color(0.47451, 0.341176, 0, 1)
+self_modulate = Color(1, 1, 1, 0.392157)
 position = Vector2(686, 159)
 scale = Vector2(0.354926, 0.354926)
 texture = ExtResource("6_new71")
 
 [node name="SpaceB1" type="Sprite2D" parent="."]
-modulate = Color(0, 0.482353, 0.027451, 1)
+modulate = Color(0, 0.482353, 0.027451, 0.392157)
 position = Vector2(144, 321)
 scale = Vector2(0.264187, 0.264187)
 texture = ExtResource("7_ktpwi")
 
 [node name="SpaceB2" type="Sprite2D" parent="."]
-modulate = Color(0, 0.615686, 0.615686, 1)
+modulate = Color(0, 0.615686, 0.615686, 0.392157)
 position = Vector2(283, 337)
 scale = Vector2(0.276875, 0.276875)
 texture = ExtResource("7_dnlwq")
 
 [node name="SpaceB3" type="Sprite2D" parent="."]
-modulate = Color(0, 0.407843, 0.427451, 1)
+modulate = Color(0, 0.407843, 0.427451, 0.392157)
 position = Vector2(505, 336.594)
 scale = Vector2(0.381416, 0.381416)
 texture = ExtResource("6_new71")
 
 [node name="SpaceB4" type="Sprite2D" parent="."]
-modulate = Color(0.537255, 0.537255, 0, 1)
+modulate = Color(0.537255, 0.537255, 0, 0.392157)
 position = Vector2(646, 338)
 scale = Vector2(0.272813, 0.272813)
 texture = ExtResource("7_dnlwq")
 
 [node name="SpaceC1" type="Sprite2D" parent="."]
-modulate = Color(0.647059, 0, 0.647059, 1)
+modulate = Color(0.647059, 0, 0.647059, 0.392157)
 position = Vector2(104, 516)
 scale = Vector2(0.284375, 0.284375)
 texture = ExtResource("7_dnlwq")
 
 [node name="SpaceC2" type="Sprite2D" parent="."]
-modulate = Color(0.0627451, 0, 0.662745, 1)
+modulate = Color(0.0627451, 0, 0.662745, 0.392157)
 position = Vector2(323, 518)
 scale = Vector2(0.388038, 0.388038)
 texture = ExtResource("6_new71")
 
 [node name="SpaceC3" type="Sprite2D" parent="."]
-modulate = Color(0.792157, 0, 0.231373, 1)
+modulate = Color(0.792157, 0, 0.231373, 0.392157)
 position = Vector2(505, 515)
 scale = Vector2(0.419185, 0.419185)
 texture = ExtResource("6_new71")
 
 [node name="SpaceC4" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 1, 1)
+modulate = Color(0, 1, 1, 0.392157)
 position = Vector2(684, 496)
 scale = Vector2(0.28006, 0.28006)
 texture = ExtResource("7_ktpwi")

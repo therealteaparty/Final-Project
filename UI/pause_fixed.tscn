@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://butqwnyr6xplo"]
+
+[ext_resource type="Script" path="res://UI/Pause_Fixed.gd" id="1_lw11v"]
+[ext_resource type="Theme" uid="uid://dxvivu51tc64m" path="res://UI/ui_theme.tres" id="2_d6w8d"]
+[ext_resource type="Texture2D" uid="uid://d0vn1nm3yvurn" path="res://Assets/Untitled_Artwork (9).png" id="3_crxt4"]
+
+[node name="Pause_Fixed" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lw11v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 1154.0
+offset_bottom = 649.0
+color = Color(0.180392, 0, 0.0745098, 0.745098)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -9.0
+offset_top = 71.0
+offset_right = -9.0
+offset_bottom = 180.0
+grow_horizontal = 2
+theme = ExtResource("2_d6w8d")
+text = "PAUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart_2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 286.0
+offset_top = -18.0
+offset_right = -299.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_d6w8d")
+text = "RESTART
+"
+
+[node name="Quit_2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 289.0
+offset_top = 108.0
+offset_right = -296.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_d6w8d")
+text = "QUIT"
+
+[node name="UntitledArtwork(9)" type="Sprite2D" parent="."]
+position = Vector2(789, 273)
+scale = Vector2(0.156128, 0.156128)
+texture = ExtResource("3_crxt4")
+
+[connection signal="pressed" from="Restart_2" to="." method="_on_restart_2_pressed"]
+[connection signal="pressed" from="Restart_2" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Quit_2" to="." method="_on_quit_2_pressed"]
+[connection signal="pressed" from="Quit_2" to="." method="_on_restart_2_pressed"]
