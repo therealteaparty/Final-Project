@@ -6,6 +6,9 @@
 [sub_resource type="GDScript" id="GDScript_v27em"]
 script/source = "extends Control
 
+func _ready():
+	$Score.text = \"Wow! You ate \" + str(Global.coins) + \" Pieces of Candy!\"
+
 func _on_quit_pressed():
 	get_tree().quit()
 
@@ -48,6 +51,20 @@ theme = ExtResource("2_t8mn7")
 text = "You made it!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 516.0
+offset_top = 183.0
+offset_right = -57.0
+offset_bottom = 634.0
+grow_horizontal = 2
+theme = ExtResource("2_t8mn7")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 1

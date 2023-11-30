@@ -142,12 +142,12 @@ text = "A4   B4   C4
 
 [node name="Coins" type="Label" parent="."]
 layout_mode = 0
-offset_left = 908.0
+offset_left = 910.0
 offset_top = 501.0
-offset_right = 1063.0
+offset_right = 1065.0
 offset_bottom = 561.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 text = "CANDIES:"
 vertical_alignment = 1
 

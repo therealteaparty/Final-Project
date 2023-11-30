@@ -14,6 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_lw11v")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -1.0
 offset_top = -4.0
 offset_right = 1154.0
@@ -70,7 +71,7 @@ position = Vector2(789, 273)
 scale = Vector2(0.156128, 0.156128)
 texture = ExtResource("3_crxt4")
 
-[connection signal="pressed" from="Restart_2" to="." method="_on_restart_2_pressed"]
 [connection signal="pressed" from="Restart_2" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Quit_2" to="." method="_on_quit_2_pressed"]
+[connection signal="pressed" from="Restart_2" to="." method="_on_restart_2_pressed"]
 [connection signal="pressed" from="Quit_2" to="." method="_on_restart_2_pressed"]
+[connection signal="pressed" from="Quit_2" to="." method="_on_quit_2_pressed"]

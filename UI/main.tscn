@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bja6ppos5ms80"]
+[gd_scene load_steps=6 format=3 uid="uid://bja6ppos5ms80"]
 
 [ext_resource type="Script" path="res://UI/main.gd" id="1_jdwd7"]
 [ext_resource type="Texture2D" uid="uid://dabhxkfrgpc0y" path="res://Assets/backgrund.png" id="2_nmw4s"]
 [ext_resource type="Theme" uid="uid://dxvivu51tc64m" path="res://UI/ui_theme.tres" id="3_asmo0"]
 [ext_resource type="Texture2D" uid="uid://d0vn1nm3yvurn" path="res://Assets/Untitled_Artwork (9).png" id="4_677wm"]
+[ext_resource type="AudioStream" uid="uid://hp2as48f3s6l" path="res://Assets/My Song 66.mp3" id="5_o4cfu"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -39,7 +40,7 @@ grow_vertical = 2
 scale = Vector2(1.1, 1.1)
 theme = ExtResource("3_asmo0")
 theme_override_font_sizes/font_size = 70
-text = "Theres a squid
+text = "There's a squid
 in my snack!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -95,6 +96,10 @@ text = "HOW TO PLAY"
 position = Vector2(180, 520)
 scale = Vector2(0.101013, 0.101013)
 texture = ExtResource("4_677wm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_o4cfu")
+autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

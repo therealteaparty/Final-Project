@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://djytqokvmetvd"]
+[gd_scene load_steps=8 format=3 uid="uid://djytqokvmetvd"]
 
 [ext_resource type="Texture2D" uid="uid://b1e643rrnrrbc" path="res://Assets/Untitled_Artwork (8).png" id="1_0kivu"]
 [ext_resource type="Script" path="res://UI/losescreen.gd" id="1_r42iv"]
 [ext_resource type="Texture2D" uid="uid://cxwejwnyclh1f" path="res://Assets/Untitled_Artwork (10).png" id="2_vken7"]
+[ext_resource type="AudioStream" uid="uid://b80u7cqhksqp0" path="res://Assets/My Song 67.mp3" id="4_48fjp"]
 
 [sub_resource type="Animation" id="Animation_uk8nh"]
-length = 3.5
+length = 3.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -65,5 +66,9 @@ autoplay = "arm"
 libraries = {
 "": SubResource("AnimationLibrary_u4322")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_48fjp")
+autoplay = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

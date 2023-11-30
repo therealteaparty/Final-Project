@@ -1,7 +1,7 @@
 extends Node
 
 var coins = 0
-var time = 60
+var time = 45
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS

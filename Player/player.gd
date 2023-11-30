@@ -13,10 +13,12 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("up") and position.y != 150:
 		position.y -= 175
 		$AnimatedSprite2D.play("Up")
+		$Squish.play()
 		#print(position.x, " ", position.y)
 	if Input.is_action_just_pressed("down") and position.y != 500:
 		position.y += 175
 		$AnimatedSprite2D.play("Down")
+		$Squish.play()
 		
 		#print(position.x, " ", position.y)
 

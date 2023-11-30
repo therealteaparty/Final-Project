@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bc2m12alubr80"]
+[gd_scene load_steps=9 format=3 uid="uid://bc2m12alubr80"]
 
 [ext_resource type="Script" path="res://UI/lose.gd" id="1_dra88"]
 [ext_resource type="Texture2D" uid="uid://dabhxkfrgpc0y" path="res://Assets/backgrund.png" id="1_gi2dy"]
 [ext_resource type="Texture2D" uid="uid://d0vn1nm3yvurn" path="res://Assets/Untitled_Artwork (9).png" id="2_u22q8"]
 [ext_resource type="Texture2D" uid="uid://b1e643rrnrrbc" path="res://Assets/Untitled_Artwork (8).png" id="3_367qr"]
+[ext_resource type="AudioStream" uid="uid://dljt5sodsjvx0" path="res://Assets/metal.mp3" id="5_wyjkk"]
 
 [sub_resource type="Animation" id="Animation_2wpuc"]
 length = 0.001
@@ -71,5 +72,10 @@ autoplay = "fall"
 libraries = {
 "": SubResource("AnimationLibrary_kaeoq")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wyjkk")
+volume_db = 2.811
+autoplay = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

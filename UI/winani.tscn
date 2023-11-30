@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bj0dabhro8wl4"]
+[gd_scene load_steps=11 format=3 uid="uid://bj0dabhro8wl4"]
 
 [ext_resource type="Texture2D" uid="uid://b1e643rrnrrbc" path="res://Assets/Untitled_Artwork (8).png" id="1_dfusm"]
 [ext_resource type="Script" path="res://UI/winani.gd" id="1_ik05n"]
 [ext_resource type="Texture2D" uid="uid://dc4ldvx5l58aw" path="res://Assets/Untitled_Artwork (6).png" id="2_7kikp"]
 [ext_resource type="Texture2D" uid="uid://dgknn42lhh6s8" path="res://Assets/snakcies.png" id="3_pstyd"]
 [ext_resource type="Theme" uid="uid://dxvivu51tc64m" path="res://UI/ui_theme.tres" id="5_eojy1"]
+[ext_resource type="AudioStream" uid="uid://hp2as48f3s6l" path="res://Assets/My Song 66.mp3" id="6_gtti4"]
+[ext_resource type="AudioStream" uid="uid://cspbgldbwcjt6" path="res://Assets/Squishy.wav" id="7_mo420"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40c03"]
 atlas = ExtResource("2_7kikp")
@@ -98,6 +100,15 @@ theme = ExtResource("5_eojy1")
 text = "You won!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_gtti4")
+autoplay = true
+
+[node name="Squishy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_mo420")
+volume_db = 5.622
+autoplay = true
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Play_Again" to="." method="_on_play_again_pressed"]
