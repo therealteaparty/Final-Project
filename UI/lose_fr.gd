@@ -1,5 +1,9 @@
 extends Control
 
+
+func _ready():
+	$Score.text = "OH NO! You lost " + str(Global.coins) + " Pieces of Candy!"
+
 func _on_play_again_pressed():
 	get_tree().change_scene_to_file("res://Levels/level1.tscn")
 

@@ -24,9 +24,9 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 318.0
+offset_left = 100.0
 offset_top = -18.0
-offset_right = -388.0
+offset_right = -606.0
 offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -39,9 +39,9 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 324.0
+offset_left = 100.0
 offset_top = 133.0
-offset_right = -391.0
+offset_right = -615.0
 offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -59,6 +59,18 @@ theme_override_font_sizes/font_size = 110
 text = "YOU WERE CAUGHT!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 243.0
+offset_right = 1080.0
+offset_bottom = 590.0
+theme = ExtResource("2_u62ex")
+theme_override_font_sizes/font_size = 95
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="Play_Again" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
