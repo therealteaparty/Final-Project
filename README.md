@@ -12,14 +12,20 @@ We struggled with organizing our ideas and staying on track with our priorities.
 
 ## Implementation
 Built with Godot 4.1
+
 Features: Collectable items, randomization, involved HUD, original assets/OST, sound effects.
+
 We created all origional art, music, and animations for this game. Specifically we made a background, multiple snack assets, a animated character, and multiple end screen animations. 
 
 ## References
 Godot How to Make a Random Choice Function -- https://www.youtube.com/watch?v=CoEput1d8DE
+
 Squid squish -- https://freesound.org/people/HonorHunter/sounds/271666/
+
 Vending clang -- https://freesound.org/people/spanrucker/sounds/272218/
+
 Font -- https://www.1001fonts.com/blow-font.html
+
 3 Ways to Create Timers in Godot 4 -- https://www.youtube.com/watch?v=1sYgGvrDYag
 
 ## Future Development
