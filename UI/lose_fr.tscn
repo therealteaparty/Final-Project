@@ -61,14 +61,6 @@ text = "YOU WERE CAUGHT!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_kdu0i")
-autoplay = true
-=======
-=======
->>>>>>> ecb512fb90c577276cf07d630607c940cc5cd192
 [node name="Score" type="Label" parent="."]
 layout_mode = 0
 offset_left = 609.0
@@ -80,10 +72,6 @@ theme_override_font_sizes/font_size = 95
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-<<<<<<< HEAD
->>>>>>> ecb512fb90c577276cf07d630607c940cc5cd192
-=======
->>>>>>> ecb512fb90c577276cf07d630607c940cc5cd192
 
 [connection signal="pressed" from="Play_Again" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
