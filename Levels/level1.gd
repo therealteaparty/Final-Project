@@ -1,22 +1,21 @@
 extends Node2D
 
 @onready var player = get_node_or_null("/root/Level/Player")
+@onready var camera = get_node_or_null("/root/Level/Camera")
 
-#MIGHT NOT NEED THIS/NOT USING IT RN
-#var A1 = get_node_or_null("Level/A1")
-#var A2 = get_node_or_null("Level/A2")
-#var A3 = get_node_or_null("Level/A3")
-#var A4 = get_node_or_null("Level/A4")
-#
-#var B1 = get_node_or_null("Level/B1")
-#var B2 = get_node_or_null("Level/B2")
-#var B3 = get_node_or_null("Level/B3")
-#var B4 = get_node_or_null("Level/B4")
+var new_position = Vector2.ZERO
 
-#var C1 = get_node_or_null("Level/C1")
-#var C2 = get_node_or_null("Level/C2")
-#var C3 = get_node_or_null("Level/C3")
-#var C4 = get_node_or_null("Level/C4")
+var time_appear = 0.5
+var time_fall = 0.8
+var time_rotate = 1.0
+var time_a = 0.8
+var time_s = 1.2
+var time_v = 1.5
+var tween
+
+var sway_amplitude = 3.0
+var sway_initial_position = Vector2.ZERO
+var sway_randomizer = Vector2.ZERO
 
 var spaces = {
 	"A1":0, "A2":0, "A3":0, "A4":0,
@@ -34,6 +33,8 @@ func _ready():
 	randomize()
 	$Countdown.start()
 	$Chosen_Space.start()
+	tween = create_tween()
+	tween.tween_property(self, "position", new_position, 0.5 + randf()*2).set_trans(Tween.TRANS_BOUNCE)
 
 #MIGHT NOT NEED THIS/NOT USING IT RN
 func _process(_delta):
@@ -85,109 +86,85 @@ func _on_countdown_timeout():
 
 func _on_key_a_1_animation_finished():
 	$SpaceA1.play()
+	if camera != null:
+		camera.add_trauma(3.0)
 	if player.position == Vector2(140,150):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_a_2_animation_finished():
 	$SpaceA2.play()
+	if camera != null:
+		camera.add_trauma(3.0)
 	if player.position == Vector2(325,150):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 	
 func _on_key_a_3_animation_finished():
 	$SpaceA3.play()
+	if camera != null:
+		camera.add_trauma(3.0)
 	if player.position == Vector2(510,150):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_a_4_animation_finished():
 	$SpaceA4.play()
+	if camera != null:
+		camera.add_trauma(3.0)
 	if player.position == Vector2(695,150):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_b_1_animation_finished():
 	$SpaceB1.play()
+	if camera != null:
+		camera.add_trauma(3.0)
 	if player.position == Vector2(140,325):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_b_2_animation_finished():
 	$SpaceB2.play()
+	if camera != null:
+		camera.add_trauma(3.0)
 	if player.position == Vector2(325,325):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_b_3_animation_finished():
 	$SpaceB3.play()
+	if camera != null:
+		camera.add_trauma(3.0)
 	if player.position == Vector2(510, 325):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_b_4_animation_finished():
 	$SpaceB4.play()
+	if camera != null:
+		camera.add_trauma(3.0)
 	if player.position == Vector2(695, 325):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_c_1_animation_finished():
 	$SpaceC1.play()
+	if camera != null:
+		camera.add_trauma(3.0)
 	if player.position == Vector2(140,500):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_c_2_animation_finished():
 	$SpaceC2.play()
+	if camera != null:
+		camera.add_trauma(3.0)
 	if player.position == Vector2(325,500):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_c_3_animation_finished():
 	$SpaceC3.play()
+	if camera != null:
+		camera.add_trauma(3.0)
 	if player.position == Vector2(510,500):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_c_4_animation_finished():
 	$SpaceC4.play()
+	if camera != null:
+		camera.add_trauma(3.0)
 	if player.position == Vector2(695,500):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
-#OOPS DONT NEED THIS ----------------------------------------------------------
-#func _on_a_1_body_entered(body):
-#	if body.name == "Player" and $SpaceA1.is_playing():
-#		body.queue_free()
-#
-#func _on_a_2_body_entered(body):
-#	if body.name == "Player" and spaces["A2"] == 1:
-#		body.queue_free()
-#
-#func _on_a_3_body_entered(body):
-#	if body.name == "Player" and spaces["A3"] == 1:
-#		body.queue_free()
-#
-#func _on_a_4_body_entered(body):
-#	if body.name == "Player" and spaces["A4"] == 1:
-#		body.queue_free()
-#
-#func _on_b_1_body_entered(body):
-#	if body.name == "Player" and spaces["B1"] == 1:
-#		body.queue_free()
-#
-#func _on_b_2_body_entered(body):
-#	if body.name == "Player" and spaces["B2"] == 1:
-#		body.queue_free()
-#
-#func _on_b_3_body_entered(body):
-#	if body.name == "Player" and spaces["B3"] == 1:
-#		body.queue_free()
-#
-#func _on_b_4_body_entered(body):
-#	if body.name == "Player" and spaces["B4"] == 1:
-#		body.queue_free()
-#
-#func _on_c_1_body_entered(body):
-#	if body.name == "Player" and spaces["C1"] == 1:
-#		body.queue_free()
-#
-#func _on_c_2_body_entered(body):
-#	if body.name == "Player" and spaces["C2"] == 1:
-#		body.queue_free()
-#
-#func _on_c_3_body_entered(body):
-#	if body.name == "Player" and spaces["C3"] == 1:
-#		body.queue_free()
-#
-#func _on_c_4_body_entered(body):
-#	if body.name == "Player" and spaces["C4"] == 1:
-#		body.queue_free()

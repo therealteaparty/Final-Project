@@ -1,22 +1,45 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp6f0w6btekma"]
+[gd_scene load_steps=12 format=3 uid="uid://dp6f0w6btekma"]
 
 [ext_resource type="Script" path="res://Levels/level1.gd" id="1_4332q"]
-[ext_resource type="Texture2D" uid="uid://bp6vccuskclmw" path="res://Assets/vending no text.png" id="2_d3do1"]
 [ext_resource type="PackedScene" uid="uid://c3vfis55kri1f" path="res://Player/player.tscn" id="2_ijapu"]
+[ext_resource type="Texture2D" uid="uid://b5xjuv61e7mmt" path="res://Assets/background final (2).png" id="2_iwoob"]
 [ext_resource type="Texture2D" uid="uid://x005f4baxuct" path="res://Assets/rings.png" id="3_kmty0"]
+[ext_resource type="Texture2D" uid="uid://bs8xwg3miote6" path="res://Assets/Untitled_Artwork (16).png" id="5_ssol1"]
 [ext_resource type="PackedScene" uid="uid://bnx0getl4e8be" path="res://UI/pause.tscn" id="5_tr6vn"]
 [ext_resource type="SpriteFrames" uid="uid://ryhhj4lnr5gq" path="res://Assets/flashing.tres" id="6_etrxy"]
+[ext_resource type="Script" path="res://Player/Candies.gd" id="6_ud00q"]
+[ext_resource type="Script" path="res://Levels/Camera2D.gd" id="7_f50oh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0nou"]
+texture = ExtResource("5_ssol1")
+texture_region_size = Vector2i(50, 50)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -20, 20, -20, 20, 20, -20, 20)
+
+[sub_resource type="TileSet" id="TileSet_rg8wu"]
+tile_size = Vector2i(40, 40)
+physics_layer_0/collision_layer = 65535
+physics_layer_0/collision_mask = 65535
+sources/1 = SubResource("TileSetAtlasSource_f0nou")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_4332q")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
-texture = ExtResource("2_d3do1")
+texture = ExtResource("2_iwoob")
 
 [node name="Rings" type="Sprite2D" parent="."]
 position = Vector2(575, 325)
 texture = ExtResource("3_kmty0")
+
+[node name="Candies" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_rg8wu")
+format = 2
+layer_0/tile_data = PackedInt32Array(262147, 1, 0, 262152, 1, 0, 262157, 1, 0, 262161, 1, 0, 524291, 1, 0, 524296, 1, 0, 524300, 1, 0, 524305, 1, 0, 851971, 1, 0, 851976, 1, 0, 851980, 1, 0, 851985, 1, 0)
+script = ExtResource("6_ud00q")
 
 [node name="Player" parent="." instance=ExtResource("2_ijapu")]
 position = Vector2(140, 150)
@@ -160,6 +183,17 @@ text = "A4   B4   C4
 
 "
 
+[node name="Coins" type="Label" parent="UI/HUD"]
+layout_mode = 0
+offset_left = 912.0
+offset_top = 504.0
+offset_right = 1067.0
+offset_bottom = 564.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "CANDIES:"
+vertical_alignment = 1
+
 [node name="Pause" parent="UI" instance=ExtResource("5_tr6vn")]
 visible = false
 
@@ -267,12 +301,10 @@ frame_progress = 1.0
 [node name="SpaceA1" type="AnimatedSprite2D" parent="."]
 position = Vector2(1204, 246)
 scale = Vector2(0.3125, 0.3125)
-animation = &""
 
 [node name="SpaceA2" type="AnimatedSprite2D" parent="."]
-position = Vector2(1252, 242)
+position = Vector2(1200, 157)
 scale = Vector2(0.3125, 0.3125)
-animation = &""
 
 [node name="SpaceA3" type="AnimatedSprite2D" parent="."]
 position = Vector2(1293, 245)
@@ -323,6 +355,10 @@ animation = &""
 position = Vector2(1319, 323)
 scale = Vector2(0.3125, 0.3125)
 animation = &""
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+script = ExtResource("7_f50oh")
 
 [connection signal="timeout" from="Chosen_Space" to="." method="_on_chosen_space_timeout"]
 [connection signal="timeout" from="Countdown" to="." method="_on_countdown_timeout"]

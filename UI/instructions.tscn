@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckg32pof2vxn"]
 
 [ext_resource type="Script" path="res://UI/instructions.gd" id="1_vtuwc"]
-[ext_resource type="Theme" uid="uid://dit28if14ix1k" path="res://UI/ui_theme.tres" id="2_xpg44"]
+[ext_resource type="Theme" uid="uid://dxvivu51tc64m" path="res://UI/ui_theme.tres" id="2_xpg44"]
 
 [node name="Instructions" type="Control"]
 layout_mode = 3

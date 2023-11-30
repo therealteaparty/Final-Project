@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c3vfis55kri1f"]
+[gd_scene load_steps=17 format=3 uid="uid://c3vfis55kri1f"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_nweyj"]
 [ext_resource type="Texture2D" uid="uid://dc4ldvx5l58aw" path="res://Assets/Untitled_Artwork (6).png" id="2_857ui"]
@@ -115,6 +115,9 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_il25n"]
+radius = 61.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_nweyj")
 
@@ -126,3 +129,10 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_10s0y")
 animation = &"Down"
 autoplay = "Idle"
+
+[node name="candy_collector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="candy_collector"]
+shape = SubResource("CircleShape2D_il25n")
+
+[connection signal="body_entered" from="candy_collector" to="." method="_on_candy_collector_body_entered"]
