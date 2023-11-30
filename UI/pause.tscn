@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnx0getl4e8be"]
+[gd_scene load_steps=3 format=3 uid="uid://bnx0getl4e8be"]
 
 [ext_resource type="Script" path="res://UI/pause.gd" id="1_edis3"]
+[ext_resource type="Theme" uid="uid://dit28if14ix1k" path="res://UI/ui_theme.tres" id="2_i1phm"]
 
 [node name="Pause" type="Control"]
 layout_mode = 3
@@ -15,14 +16,18 @@ script = ExtResource("1_edis3")
 layout_mode = 0
 offset_right = 1155.0
 offset_bottom = 653.0
-color = Color(0, 0, 0, 0.211765)
+color = Color(0.180392, 0, 0.0745098, 0.745098)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 109.0
+offset_left = -1.0
+offset_top = 76.0
+offset_right = -1.0
+offset_bottom = 185.0
 grow_horizontal = 2
+theme = ExtResource("2_i1phm")
 text = "PAUSE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -33,12 +38,13 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 225.0
-offset_top = -70.0
-offset_right = -245.0
-offset_bottom = 6.0
+offset_left = 288.0
+offset_top = -52.0
+offset_right = -297.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_i1phm")
 text = "RESTART"
 
 [node name="Quit" type="Button" parent="."]
@@ -47,12 +53,13 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 223.0
-offset_top = 49.0
-offset_right = -247.0
-offset_bottom = 125.0
+offset_left = 287.0
+offset_top = 88.0
+offset_right = -294.0
+offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_i1phm")
 text = "QUIT"
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

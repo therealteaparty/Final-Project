@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bc2m12alubr80"]
+[gd_scene load_steps=3 format=3 uid="uid://bc2m12alubr80"]
 
 [ext_resource type="Texture2D" uid="uid://b6jwjg8lh67rf" path="res://Assets/vending 2.png" id="1_aab0r"]
+[ext_resource type="Theme" uid="uid://dit28if14ix1k" path="res://UI/ui_theme.tres" id="2_gw1xm"]
 
 [node name="Lose" type="Control"]
 layout_mode = 3
@@ -14,14 +15,25 @@ grow_vertical = 2
 position = Vector2(576, 324)
 texture = ExtResource("1_aab0r")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 651.0
+color = Color(0.494118, 0, 0.247059, 0.662745)
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -10.0
+offset_right = 3.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 60
+theme = ExtResource("2_gw1xm")
+theme_override_font_sizes/font_size = 140
 text = "YOU WERE CAUGHT"
 horizontal_alignment = 1
 vertical_alignment = 1
