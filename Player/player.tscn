@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=17 format=3 uid="uid://c3vfis55kri1f"]
-=======
+
 [gd_scene load_steps=13 format=3 uid="uid://c3vfis55kri1f"]
 >>>>>>> d9847b4afae9c74d1146c7ccf674ff2a296f8199
 
@@ -120,6 +118,4 @@ autoplay = "Idle"
 shape = SubResource("CircleShape2D_il25n")
 
 [connection signal="body_entered" from="candy_collector" to="." method="_on_candy_collector_body_entered"]
-=======
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
->>>>>>> d9847b4afae9c74d1146c7ccf674ff2a296f8199
+
