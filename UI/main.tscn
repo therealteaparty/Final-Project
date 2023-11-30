@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://UI/main.gd" id="1_jdwd7"]
 [ext_resource type="Texture2D" uid="uid://dabhxkfrgpc0y" path="res://Assets/backgrund.png" id="2_nmw4s"]
-[ext_resource type="Theme" uid="uid://dit28if14ix1k" path="res://UI/ui_theme.tres" id="3_asmo0"]
+[ext_resource type="Theme" uid="uid://dxvivu51tc64m" path="res://UI/ui_theme.tres" id="3_asmo0"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
