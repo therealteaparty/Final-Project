@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b1e643rrnrrbc" path="res://Assets/Untitled_Artwork (8).png" id="1_8lhh2"]
 [ext_resource type="Script" path="res://UI/lose_fr.gd" id="1_nsdy1"]
 [ext_resource type="Theme" uid="uid://dxvivu51tc64m" path="res://UI/ui_theme.tres" id="2_u62ex"]
-[ext_resource type="AudioStream" uid="uid://hp2as48f3s6l" path="res://Assets/My Song 66.mp3" id="4_kdu0i"]
+[ext_resource type="AudioStream" uid="uid://hp2as48f3s6l" path="res://Assets/My Song 66.mp3" id="4_o3s5t"]
 
 [node name="lose_fr" type="Control"]
 layout_mode = 3
@@ -25,10 +25,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 100.0
-offset_top = -18.0
-offset_right = -606.0
-offset_bottom = 65.0
+offset_left = 99.0
+offset_top = -30.0
+offset_right = -607.0
+offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_u62ex")
@@ -40,10 +40,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 100.0
-offset_top = 133.0
-offset_right = -615.0
-offset_bottom = 220.0
+offset_left = 102.0
+offset_top = 120.0
+offset_right = -603.0
+offset_bottom = 207.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_u62ex")
@@ -63,15 +63,19 @@ vertical_alignment = 1
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 0
-offset_left = 609.0
-offset_top = 243.0
-offset_right = 1080.0
-offset_bottom = 590.0
+offset_left = 602.0
+offset_top = 227.0
+offset_right = 1073.0
+offset_bottom = 574.0
 theme = ExtResource("2_u62ex")
 theme_override_font_sizes/font_size = 95
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_o3s5t")
+autoplay = true
 
 [connection signal="pressed" from="Play_Again" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

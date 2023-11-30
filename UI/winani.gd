@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	$Score.text = "You collected " + str(Global.coins) + " pieces of candy!"
+	
 func _on_quit_pressed():
 	get_tree().quit()
 
