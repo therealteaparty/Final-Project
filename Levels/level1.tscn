@@ -402,7 +402,7 @@ frame_progress = 1.0
 [node name="SpaceA1" type="AnimatedSprite2D" parent="."]
 position = Vector2(1204, 246)
 scale = Vector2(0.3125, 0.3125)
-animation = &"vending"
+animation = &""
 
 [node name="SpaceA2" type="AnimatedSprite2D" parent="."]
 position = Vector2(1252, 242)
