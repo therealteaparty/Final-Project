@@ -1,68 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dp6f0w6btekma"]
+[gd_scene load_steps=7 format=3 uid="uid://dp6f0w6btekma"]
 
 [ext_resource type="Script" path="res://Levels/level1.gd" id="1_4332q"]
 [ext_resource type="Texture2D" uid="uid://bp6vccuskclmw" path="res://Assets/vending no text.png" id="2_d3do1"]
 [ext_resource type="PackedScene" uid="uid://c3vfis55kri1f" path="res://Player/player.tscn" id="2_ijapu"]
 [ext_resource type="Texture2D" uid="uid://x005f4baxuct" path="res://Assets/rings.png" id="3_kmty0"]
 [ext_resource type="PackedScene" uid="uid://bnx0getl4e8be" path="res://UI/pause.tscn" id="5_tr6vn"]
-[ext_resource type="Texture2D" uid="uid://dfmyg2fl4y5ho" path="res://Assets/flash.png" id="6_3jrlq"]
-[ext_resource type="Texture2D" uid="uid://diqxdvb1rwhdh" path="res://Assets/New Piskel (3).png" id="6_8kscx"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wbll7"]
-atlas = ExtResource("6_3jrlq")
-region = Rect2(0, 0, 309, 310)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8brtf"]
-atlas = ExtResource("6_8kscx")
-region = Rect2(160, 0, 160, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s5wnp"]
-atlas = ExtResource("6_8kscx")
-region = Rect2(480, 0, 160, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4kv0u"]
-atlas = ExtResource("6_8kscx")
-region = Rect2(0, 160, 160, 160)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_c280j"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbll7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8brtf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbll7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s5wnp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbll7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4kv0u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbll7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4kv0u")
-}],
-"loop": false,
-"name": &"flash",
-"speed": 7.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbll7")
-}],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://ryhhj4lnr5gq" path="res://Assets/flashing.tres" id="6_etrxy"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_4332q")
@@ -228,97 +171,97 @@ wait_time = 60.0
 [node name="KeyA1" type="AnimatedSprite2D" parent="."]
 position = Vector2(923, 181)
 scale = Vector2(0.922656, 0.922656)
-sprite_frames = SubResource("SpriteFrames_c280j")
+sprite_frames = ExtResource("6_etrxy")
 animation = &"flash"
 frame = 7
 frame_progress = 1.0
 
 [node name="KeyA2" type="AnimatedSprite2D" parent="."]
-position = Vector2(913, 251)
-scale = Vector2(0.3125, 0.3125)
-sprite_frames = SubResource("SpriteFrames_c280j")
+position = Vector2(925, 245)
+scale = Vector2(0.9375, 0.9375)
+sprite_frames = ExtResource("6_etrxy")
 animation = &"flash"
-frame = 5
+frame = 7
 frame_progress = 1.0
 
 [node name="KeyA3" type="AnimatedSprite2D" parent="."]
-position = Vector2(916, 316)
-scale = Vector2(0.3125, 0.3125)
-sprite_frames = SubResource("SpriteFrames_c280j")
+position = Vector2(927, 311)
+scale = Vector2(0.938, 0.938)
+sprite_frames = ExtResource("6_etrxy")
 animation = &"flash"
-frame = 5
+frame = 7
 frame_progress = 1.0
 
 [node name="KeyA4" type="AnimatedSprite2D" parent="."]
-position = Vector2(915, 377)
-scale = Vector2(0.3125, 0.3125)
-sprite_frames = SubResource("SpriteFrames_c280j")
+position = Vector2(928, 371)
+scale = Vector2(0.938, 0.938)
+sprite_frames = ExtResource("6_etrxy")
 animation = &"flash"
-frame = 5
+frame = 7
 frame_progress = 1.0
 
 [node name="KeyB1" type="AnimatedSprite2D" parent="."]
-position = Vector2(976, 186)
-scale = Vector2(0.3125, 0.3125)
-sprite_frames = SubResource("SpriteFrames_c280j")
+position = Vector2(986, 179)
+scale = Vector2(0.938, 0.938)
+sprite_frames = ExtResource("6_etrxy")
 animation = &"flash"
-frame = 5
+frame = 7
 frame_progress = 1.0
 
 [node name="KeyB2" type="AnimatedSprite2D" parent="."]
-position = Vector2(975, 250)
-scale = Vector2(0.3125, 0.3125)
-sprite_frames = SubResource("SpriteFrames_c280j")
+position = Vector2(988, 242)
+scale = Vector2(0.938, 0.938)
+sprite_frames = ExtResource("6_etrxy")
 animation = &"flash"
-frame = 5
+frame = 7
 frame_progress = 1.0
 
 [node name="KeyB3" type="AnimatedSprite2D" parent="."]
-position = Vector2(975, 316)
-scale = Vector2(0.3125, 0.3125)
-sprite_frames = SubResource("SpriteFrames_c280j")
+position = Vector2(989, 309)
+scale = Vector2(0.938, 0.938)
+sprite_frames = ExtResource("6_etrxy")
 animation = &"flash"
-frame = 5
+frame = 7
 frame_progress = 1.0
 
 [node name="KeyB4" type="AnimatedSprite2D" parent="."]
-position = Vector2(977, 378)
-scale = Vector2(0.3125, 0.3125)
-sprite_frames = SubResource("SpriteFrames_c280j")
+position = Vector2(988, 371)
+scale = Vector2(0.938, 0.938)
+sprite_frames = ExtResource("6_etrxy")
 animation = &"flash"
-frame = 5
+frame = 7
 frame_progress = 1.0
 
 [node name="KeyC1" type="AnimatedSprite2D" parent="."]
-position = Vector2(1038, 182)
-scale = Vector2(0.3125, 0.3125)
-sprite_frames = SubResource("SpriteFrames_c280j")
+position = Vector2(1047, 176)
+scale = Vector2(0.938, 0.938)
+sprite_frames = ExtResource("6_etrxy")
 animation = &"flash"
-frame = 5
+frame = 7
 frame_progress = 1.0
 
 [node name="KeyC2" type="AnimatedSprite2D" parent="."]
-position = Vector2(1038, 249)
-scale = Vector2(0.3125, 0.3125)
-sprite_frames = SubResource("SpriteFrames_c280j")
+position = Vector2(1051, 243)
+scale = Vector2(0.938, 0.938)
+sprite_frames = ExtResource("6_etrxy")
 animation = &"flash"
-frame = 5
+frame = 7
 frame_progress = 1.0
 
 [node name="KeyC3" type="AnimatedSprite2D" parent="."]
-position = Vector2(1038, 316)
-scale = Vector2(0.3125, 0.3125)
-sprite_frames = SubResource("SpriteFrames_c280j")
+position = Vector2(1050, 311)
+scale = Vector2(0.938, 0.938)
+sprite_frames = ExtResource("6_etrxy")
 animation = &"flash"
-frame = 5
+frame = 7
 frame_progress = 1.0
 
 [node name="KeyC4" type="AnimatedSprite2D" parent="."]
-position = Vector2(1039, 377)
-scale = Vector2(0.3125, 0.3125)
-sprite_frames = SubResource("SpriteFrames_c280j")
+position = Vector2(1051, 371)
+scale = Vector2(0.938, 0.938)
+sprite_frames = ExtResource("6_etrxy")
 animation = &"flash"
-frame = 5
+frame = 7
 frame_progress = 1.0
 
 [node name="SpaceA1" type="AnimatedSprite2D" parent="."]
