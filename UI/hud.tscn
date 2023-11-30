@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://bfdgehm3avg2q"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 0
+offset_left = 893.0
+offset_top = 426.0
+offset_right = 940.0
+offset_bottom = 452.0
+scale = Vector2(1.5, 1.5)
+text = "TIME: "
+
+[node name="Numbers_A" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 126.0
+offset_top = 201.0
+offset_right = -432.0
+offset_bottom = -351.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "A1                  A2                  A3                 A4
+
+"
+
+[node name="Numbers_B" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 127.0
+offset_top = 382.0
+offset_right = -431.0
+offset_bottom = -170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "B1                  B2                  B3                 B4
+
+"
+
+[node name="Numbers_C" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 125.0
+offset_top = 565.0
+offset_right = -433.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "C1                  C2                  C3                 C4
+
+"
+
+[node name="Keypad_Numbers_1" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 893.0
+offset_top = 163.0
+offset_right = -85.0
+offset_bottom = -341.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "A1   B1   C1
+
+
+"
+
+[node name="Keypad_Numbers_2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 894.0
+offset_top = 230.0
+offset_right = -84.0
+offset_bottom = -274.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "A2   B2   C2
+
+
+"
+
+[node name="Keypad_Numbers_3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 893.0
+offset_top = 298.0
+offset_right = -85.0
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "A3   B3   C3
+
+
+"
+
+[node name="Keypad_Numbers_4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 895.0
+offset_top = 357.0
+offset_right = -83.0
+offset_bottom = -147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "A4   B4   C4
+
+
+"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
