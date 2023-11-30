@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://ryhhj4lnr5gq"]
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://c080yabot3m4s"]
 
 [ext_resource type="Texture2D" uid="uid://dfmyg2fl4y5ho" path="res://Assets/flash.png" id="1_jc7hg"]
 [ext_resource type="Texture2D" uid="uid://diqxdvb1rwhdh" path="res://Assets/New Piskel (3).png" id="2_4ei6l"]
@@ -33,6 +33,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s5wnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbll7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kv0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbll7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kv0u")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wbll7")

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c3vfis55kri1f" path="res://Player/player.tscn" id="2_ijapu"]
 [ext_resource type="Texture2D" uid="uid://x005f4baxuct" path="res://Assets/rings.png" id="3_kmty0"]
 [ext_resource type="PackedScene" uid="uid://bnx0getl4e8be" path="res://UI/pause.tscn" id="5_tr6vn"]
-[ext_resource type="SpriteFrames" uid="uid://ryhhj4lnr5gq" path="res://Assets/flashing.tres" id="6_etrxy"]
+[ext_resource type="SpriteFrames" uid="uid://c080yabot3m4s" path="res://Assets/flashing.tres" id="6_etrxy"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_4332q")
@@ -164,6 +164,7 @@ text = "A4   B4   C4
 visible = false
 
 [node name="Chosen_Space" type="Timer" parent="."]
+wait_time = 0.7
 
 [node name="Countdown" type="Timer" parent="."]
 wait_time = 60.0
