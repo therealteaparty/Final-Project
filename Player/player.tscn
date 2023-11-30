@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=13 format=3 uid="uid://c3vfis55kri1f"]
->>>>>>> d9847b4afae9c74d1146c7ccf674ff2a296f8199
+[gd_scene load_steps=17 format=3 uid="uid://c3vfis55kri1f"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_nweyj"]
 [ext_resource type="Texture2D" uid="uid://dc4ldvx5l58aw" path="res://Assets/Untitled_Artwork (6).png" id="2_857ui"]
@@ -111,11 +109,10 @@ sprite_frames = SubResource("SpriteFrames_10s0y")
 animation = &"Left"
 autoplay = "Idle"
 
-<<<<<<< HEAD
+
 [node name="candy_collector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="candy_collector"]
 shape = SubResource("CircleShape2D_il25n")
 
 [connection signal="body_entered" from="candy_collector" to="." method="_on_candy_collector_body_entered"]
-
