@@ -38,7 +38,7 @@ grow_vertical = 2
 scale = Vector2(1.1, 1.1)
 theme = ExtResource("3_asmo0")
 theme_override_font_sizes/font_size = 90
-text = "Snack dodger"
+text = "Snack Dodger"
 horizontal_alignment = 1
 vertical_alignment = 1
 
