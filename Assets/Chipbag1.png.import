@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://41g22earp0qu"
-path="res://.godot/imported/Chipbag1.png-cd4547befdeec87e62046c5412947797.ctex"
+path="res://.godot/imported/Chipbag1.png-6271d741c3797fbe9d8b65bd17d11c39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Chipbag1.png"
-dest_files=["res://.godot/imported/Chipbag1.png-cd4547befdeec87e62046c5412947797.ctex"]
+source_file="res://Assets/Chipbag1.png"
+dest_files=["res://.godot/imported/Chipbag1.png-6271d741c3797fbe9d8b65bd17d11c39.ctex"]
 
 [params]
 

@@ -1,7 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckg32pof2vxn"]
+[gd_scene load_steps=5 format=3 uid="uid://ckg32pof2vxn"]
 
 [ext_resource type="Script" path="res://UI/instructions.gd" id="1_vtuwc"]
 [ext_resource type="Theme" uid="uid://dxvivu51tc64m" path="res://UI/ui_theme.tres" id="2_xpg44"]
+[ext_resource type="Texture2D" uid="uid://d0vn1nm3yvurn" path="res://Assets/Untitled_Artwork (9).png" id="3_m81ir"]
+
+[sub_resource type="FontFile" id="FontFile_s7a3w"]
+cache/0/55/0/ascent = 0.0
+cache/0/55/0/descent = 0.0
+cache/0/55/0/underline_position = 0.0
+cache/0/55/0/underline_thickness = 0.0
+cache/0/55/0/scale = 1.0
+cache/0/55/0/kerning_overrides/55/0 = Vector2(0, 0)
+cache/0/55/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/55/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/55/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/glyphs/0/advance = Vector2(0, 0)
+cache/0/40/0/glyphs/0/offset = Vector2(0, 0)
+cache/0/40/0/glyphs/0/size = Vector2(0, 0)
+cache/0/40/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
+cache/0/40/0/glyphs/0/texture_idx = -1
+cache/0/40/0/kerning_overrides/55/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
 
 [node name="Instructions" type="Control"]
 layout_mode = 3
@@ -38,19 +70,21 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 22.0
-offset_top = -116.0
-offset_right = 22.0
-offset_bottom = 227.0
+offset_left = 36.0
+offset_top = -126.0
+offset_right = 123.0
+offset_bottom = 217.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.00121505
 theme = ExtResource("2_xpg44")
-theme_override_font_sizes/font_size = 55
-text = "move spaces with WASD
-avoid being mistaken for a snack and captured
-the keypad will warn you which spaces to avoid
-stay hidden for until time runs out
+theme_override_fonts/font = SubResource("FontFile_s7a3w")
+theme_override_font_sizes/font_size = 40
+text = "1.  Move spaces with WASD
+2. Avoid being mistaken for a snack and captured
+3. The keypad will warn you which spaces to avoid
+4. Stay hidden until time runs out
+5. Collect candies along the way!
 "
 justification_flags = 35
 
@@ -60,13 +94,19 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 374.0
-offset_top = 165.0
-offset_right = -376.0
-offset_bottom = 247.0
+offset_left = 390.0
+offset_top = 198.0
+offset_right = -360.0
+offset_bottom = 280.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_xpg44")
 text = "BACK"
+
+[node name="UntitledArtwork(9)" type="Sprite2D" parent="."]
+position = Vector2(945, 149)
+rotation = 0.103003
+scale = Vector2(0.213083, 0.213083)
+texture = ExtResource("3_m81ir")
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

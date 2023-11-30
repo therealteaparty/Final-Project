@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://bj0dabhro8wl4"]
+
+[ext_resource type="Texture2D" uid="uid://b1e643rrnrrbc" path="res://Assets/Untitled_Artwork (8).png" id="1_dfusm"]
+[ext_resource type="Script" path="res://UI/winani.gd" id="1_ik05n"]
+[ext_resource type="Texture2D" uid="uid://dc4ldvx5l58aw" path="res://Assets/Untitled_Artwork (6).png" id="2_7kikp"]
+[ext_resource type="Texture2D" uid="uid://dgknn42lhh6s8" path="res://Assets/snakcies.png" id="3_pstyd"]
+[ext_resource type="Theme" uid="uid://dxvivu51tc64m" path="res://UI/ui_theme.tres" id="5_eojy1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40c03"]
+atlas = ExtResource("2_7kikp")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx5gm"]
+atlas = ExtResource("2_7kikp")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wjalv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40c03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx5gm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="winani" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ik05n")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.690196, 0.690196, 0.690196, 1)
+position = Vector2(-289, -1303.5)
+scale = Vector2(2.64506, 6.04167)
+texture = ExtResource("1_dfusm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(730, 323)
+scale = Vector2(0.789063, 0.789063)
+sprite_frames = SubResource("SpriteFrames_wjalv")
+autoplay = "default"
+frame_progress = 0.988551
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(713, 434)
+scale = Vector2(0.814815, 0.814815)
+texture = ExtResource("3_pstyd")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 80.0
+offset_top = 12.0
+offset_right = -682.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_eojy1")
+text = "QUIT"
+
+[node name="Play_Again" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 83.0
+offset_top = 135.0
+offset_right = -687.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_eojy1")
+text = "PLAY AGAIN"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -17.0
+offset_top = 25.0
+offset_right = 23.0
+offset_bottom = 151.0
+grow_horizontal = 2
+theme = ExtResource("5_eojy1")
+text = "You won!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Play_Again" to="." method="_on_play_again_pressed"]

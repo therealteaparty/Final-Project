@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bja6ppos5ms80"]
+[gd_scene load_steps=5 format=3 uid="uid://bja6ppos5ms80"]
 
 [ext_resource type="Script" path="res://UI/main.gd" id="1_jdwd7"]
 [ext_resource type="Texture2D" uid="uid://dabhxkfrgpc0y" path="res://Assets/backgrund.png" id="2_nmw4s"]
 [ext_resource type="Theme" uid="uid://dxvivu51tc64m" path="res://UI/ui_theme.tres" id="3_asmo0"]
+[ext_resource type="Texture2D" uid="uid://d0vn1nm3yvurn" path="res://Assets/Untitled_Artwork (9).png" id="4_677wm"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -29,16 +30,17 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 437.0
-offset_top = -296.0
-offset_right = -71.0
-offset_bottom = -88.0
+offset_left = 477.0
+offset_top = -288.0
+offset_right = -79.0
+offset_bottom = -98.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
 theme = ExtResource("3_asmo0")
-theme_override_font_sizes/font_size = 90
-text = "Snack Dodger"
+theme_override_font_sizes/font_size = 70
+text = "Theres a squid
+in my snack!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -48,14 +50,14 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 602.0
+offset_left = 626.0
 offset_top = -64.0
-offset_right = -200.0
+offset_right = -176.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_asmo0")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 text = "PLAY"
 
 [node name="Quit" type="Button" parent="."]
@@ -64,14 +66,14 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 604.0
+offset_left = 628.0
 offset_top = 27.0
-offset_right = -198.0
+offset_right = -174.0
 offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_asmo0")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 text = "QUIT"
 
 [node name="Instructions" type="Button" parent="."]
@@ -80,14 +82,19 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 610.0
+offset_left = 630.0
 offset_top = 115.0
-offset_right = -195.0
-offset_bottom = 176.0
+offset_right = -171.0
+offset_bottom = 184.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_asmo0")
 text = "HOW TO PLAY"
+
+[node name="sea_squirt" type="Sprite2D" parent="."]
+position = Vector2(180, 520)
+scale = Vector2(0.101013, 0.101013)
+texture = ExtResource("4_677wm")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

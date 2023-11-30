@@ -1,9 +1,6 @@
 extends CharacterBody2D
 
 
-
-
-
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("left") and position.x != 140:
 		position.x -= 185
@@ -27,3 +24,5 @@ func _on_candy_collector_body_entered(body):
 	if body.name == "Candies":
 		body.get_coins(global_position)
 
+func _on_animated_sprite_2d_animation_finished():
+	$AnimatedSprite2D.play("Idle")

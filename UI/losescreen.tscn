@@ -1,7 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwn7u72bbnrg2"]
+[gd_scene load_steps=7 format=3 uid="uid://djytqokvmetvd"]
 
 [ext_resource type="Texture2D" uid="uid://b1e643rrnrrbc" path="res://Assets/Untitled_Artwork (8).png" id="1_0kivu"]
+[ext_resource type="Script" path="res://UI/losescreen.gd" id="1_r42iv"]
 [ext_resource type="Texture2D" uid="uid://cxwejwnyclh1f" path="res://Assets/Untitled_Artwork (10).png" id="2_vken7"]
+
+[sub_resource type="Animation" id="Animation_uk8nh"]
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(581, 477), Vector2(627, 304)]
+}
 
 [sub_resource type="Animation" id="Animation_lilkw"]
 resource_name = "arm"
@@ -19,21 +35,6 @@ tracks/0/keys = {
 "values": [Vector2(581, 477), Vector2(594, 291)]
 }
 
-[sub_resource type="Animation" id="Animation_uk8nh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(581, 477)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u4322"]
 _data = {
 "RESET": SubResource("Animation_uk8nh"),
@@ -47,6 +48,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r42iv")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(65, 583)
@@ -63,3 +65,5 @@ autoplay = "arm"
 libraries = {
 "": SubResource("AnimationLibrary_u4322")
 }
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

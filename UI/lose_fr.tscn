@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://ky4djmyaehcy"]
+
+[ext_resource type="Texture2D" uid="uid://b1e643rrnrrbc" path="res://Assets/Untitled_Artwork (8).png" id="1_8lhh2"]
+[ext_resource type="Script" path="res://UI/lose_fr.gd" id="1_nsdy1"]
+[ext_resource type="Theme" uid="uid://dxvivu51tc64m" path="res://UI/ui_theme.tres" id="2_u62ex"]
+
+[node name="lose_fr" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nsdy1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(168.375, 377.75)
+scale = Vector2(1.71636, 1.19985)
+texture = ExtResource("1_8lhh2")
+
+[node name="Play_Again" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 321.0
+offset_top = 143.0
+offset_right = -385.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_u62ex")
+text = "PLAY AGAIN"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 324.0
+offset_top = 10.0
+offset_right = -391.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_u62ex")
+text = "QUIT"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 46.0
+offset_right = 1157.0
+offset_bottom = 279.0
+theme = ExtResource("2_u62ex")
+theme_override_font_sizes/font_size = 110
+text = "YOU WERE CAUGHT!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Play_Again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

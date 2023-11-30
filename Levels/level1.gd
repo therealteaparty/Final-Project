@@ -80,89 +80,89 @@ func _on_chosen_space_timeout():
 	
 	
 func _on_countdown_timeout():
-	get_tree().change_scene_to_file("res://UI/end.tscn")
+	get_tree().change_scene_to_file("res://UI/winani.tscn")
 
 #-------------------------------------------------------------------------------
 
 func _on_key_a_1_animation_finished():
-	$SpaceA1.play()
+	#$SpaceA1.play()
 	if camera != null:
 		camera.add_trauma(3.0)
 	if player.position == Vector2(140,150):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_a_2_animation_finished():
-	$SpaceA2.play()
+	#$SpaceA2.play()
 	if camera != null:
 		camera.add_trauma(3.0)
 	if player.position == Vector2(325,150):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 	
 func _on_key_a_3_animation_finished():
-	$SpaceA3.play()
+	#$SpaceA3.play()
 	if camera != null:
 		camera.add_trauma(3.0)
 	if player.position == Vector2(510,150):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_a_4_animation_finished():
-	$SpaceA4.play()
+	#$SpaceA4.play()
 	if camera != null:
 		camera.add_trauma(3.0)
 	if player.position == Vector2(695,150):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_b_1_animation_finished():
-	$SpaceB1.play()
+	#$SpaceB1.play()
 	if camera != null:
 		camera.add_trauma(3.0)
 	if player.position == Vector2(140,325):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_b_2_animation_finished():
-	$SpaceB2.play()
+	#$SpaceB2.play()
 	if camera != null:
 		camera.add_trauma(3.0)
 	if player.position == Vector2(325,325):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_b_3_animation_finished():
-	$SpaceB3.play()
+	#$SpaceB3.play()
 	if camera != null:
 		camera.add_trauma(3.0)
 	if player.position == Vector2(510, 325):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_b_4_animation_finished():
-	$SpaceB4.play()
+	#$SpaceB4.play()
 	if camera != null:
 		camera.add_trauma(3.0)
 	if player.position == Vector2(695, 325):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_c_1_animation_finished():
-	$SpaceC1.play()
+	#$SpaceC1.play()
 	if camera != null:
 		camera.add_trauma(3.0)
 	if player.position == Vector2(140,500):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_c_2_animation_finished():
-	$SpaceC2.play()
+	#$SpaceC2.play()
 	if camera != null:
 		camera.add_trauma(3.0)
 	if player.position == Vector2(325,500):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_c_3_animation_finished():
-	$SpaceC3.play()
+	#$SpaceC3.play()
 	if camera != null:
 		camera.add_trauma(3.0)
 	if player.position == Vector2(510,500):
 		get_tree().change_scene_to_file("res://UI/lose.tscn")
 
 func _on_key_c_4_animation_finished():
-	$SpaceC4.play()
+	#$SpaceC4.play()
 	if camera != null:
 		camera.add_trauma(3.0)
 	if player.position == Vector2(695,500):

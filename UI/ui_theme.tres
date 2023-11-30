@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://dxvivu51tc64m"]
 
-[ext_resource type="FontFile" uid="uid://chbwc43ud6clb" path="res://Assets/hooey/HooeyDEMO-Regular.otf" id="1_1apqw"]
+[ext_resource type="FontFile" uid="uid://ce13851kf8f2g" path="res://Assets/blow/blow.ttf" id="1_t1d82"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2orx"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.84645, 0.514795, 0.663496, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -22,10 +22,12 @@ shadow_size = 5
 shadow_offset = Vector2(10, 10)
 
 [resource]
-default_font = ExtResource("1_1apqw")
+default_font = ExtResource("1_t1d82")
 default_font_size = 100
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
-Button/font_sizes/font_size = 60
-Button/fonts/font = ExtResource("1_1apqw")
+Button/font_sizes/font_size = 45
+Button/fonts/font = ExtResource("1_t1d82")
 Button/styles/hover = SubResource("StyleBoxFlat_u2orx")
 Button/styles/normal = SubResource("StyleBoxFlat_jbh2k")
+Label/font_sizes/font_size = 80
+Label/fonts/font = ExtResource("1_t1d82")
