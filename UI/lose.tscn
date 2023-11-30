@@ -1,6 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://bc2m12alubr80"]
+[gd_scene load_steps=8 format=3 uid="uid://bc2m12alubr80"]
 
+[ext_resource type="Script" path="res://UI/lose.gd" id="1_dra88"]
 [ext_resource type="Texture2D" uid="uid://dabhxkfrgpc0y" path="res://Assets/backgrund.png" id="1_gi2dy"]
+[ext_resource type="Texture2D" uid="uid://d0vn1nm3yvurn" path="res://Assets/Untitled_Artwork (9).png" id="2_u22q8"]
+[ext_resource type="Texture2D" uid="uid://b1e643rrnrrbc" path="res://Assets/Untitled_Artwork (8).png" id="3_367qr"]
+
+[sub_resource type="Animation" id="Animation_kkf5n"]
+resource_name = "fall"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(513, 173), Vector2(513, 365)]
+}
+
+[sub_resource type="Animation" id="Animation_2wpuc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(513, 173)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kaeoq"]
+_data = {
+"RESET": SubResource("Animation_2wpuc"),
+"fall": SubResource("Animation_kkf5n")
+}
 
 [node name="Lose" type="Control"]
 layout_mode = 3
@@ -9,8 +49,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dra88")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1266, -85)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_gi2dy")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(513, 173)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("2_u22q8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1266, -85)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_367qr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fall"
+libraries = {
+"": SubResource("AnimationLibrary_kaeoq")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
